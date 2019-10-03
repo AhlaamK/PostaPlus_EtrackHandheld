@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+
+    tools:context="com.postaplus.etrack.ManifestActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textViewshpmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Shipment:"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/txtvcountshpmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorclicked"
+            android:text="" />
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btnbackground"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:text="Update"
+            android:layout_weight="0.10" />
+        <Button
+            android:id="@+id/btnclear"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btnbackground"
+            android:text="Clear"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            />
+
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/CBaddshpmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Shipment"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="110dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/txtBagSeril"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="155dp"
+        android:layout_weight="1"
+        android:text="Bag No./Serial No."
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="185dp"
+        android:weightSum="1">
+
+
+
+
+        <EditText
+            android:id="@+id/edittxtbagno"
+            android:layout_width="325dp"
+            android:layout_height="45dp"
+            android:maxLength="30"
+            android:background="@drawable/edittext"
+            android:layout_marginLeft="5dp"
+            android:hint="Bag No"
+            android:layout_weight="0.72" />
+
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView3"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="250dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|top">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bag Serial No."
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="120dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/textView7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AWB No."
+                    android:padding="5dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView9" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:visibility="gone"/>
+
+
+            </TableRow>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView1"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resulttable1"/>
+
+            </ScrollView>
+        </TableLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txtvmanifst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="75dp"
+        android:layout_weight="1"
+        android:text="Manifest No."
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/edittxtmanifstno"
+            android:layout_width="325dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/edittext"
+            android:inputType="textCapCharacters"
+            android:maxLength="15"
+            android:hint="Manifest No" />
+
+        <Button
+            android:id="@+id/btnsearch"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btnbackgrndmagnf" />
+    </LinearLayout>
+
+</FrameLayout>
+

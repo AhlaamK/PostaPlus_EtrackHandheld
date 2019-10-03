@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:background="#f0f0f5"
+    tools:context="com.postaplus.etrack.SecurityCheckActivity"
+    android:keepScreenOn="true">
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <TextView
+            android:text="Date"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:id="@+id/textViewdate" />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/datespinner"
+            android:background="@drawable/edittext"/>
+        <Button
+            android:text="Verify"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/btnverify"
+            android:background="@drawable/btnbackground"
+            />
+        <Button
+            android:text="Clear"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:id="@+id/btnclear"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btnbackground"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="70dp">
+
+        <TextView
+            android:text="Runsheet No."
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:id="@+id/textViewrst" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:maxLength="15"
+            android:background="@drawable/edittext"
+            android:id="@+id/edtrst"
+             />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btnbackgrndmagnf"
+            android:id="@+id/searchbtn"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="125dp">
+
+        <TextView
+            android:text="Courier Name"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:id="@+id/textViewcur" />
+        <EditText
+            android:layout_width="235dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edittext"
+            android:id="@+id/edtcurname"
+             />
+    </LinearLayout>
+    <TextView
+        android:text="Total Shipments:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="180dp"
+        android:textSize="15sp"
+        android:id="@+id/textViewtotal" />
+    <TextView
+        android:text=""
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="180dp"
+        android:textSize="18sp"
+        android:id="@+id/textViewcount" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="165dp"
+        android:visibility="invisible"
+        />
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView3"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="220dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|top">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Delete Invalid"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="0dp"
+                    android:layout_gravity="left|top"
+                    android:id="@+id/clrawbbtn"
+                    android:visibility="gone"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AWB No."
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/textView7" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A/C No."
+                    android:padding="5dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A/C Name"
+                    android:padding="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView11" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verify"
+                    android:padding="5dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView12" />
+            </TableRow>
+
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView1"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resulttable1"/>
+
+            </ScrollView>
+        </TableLayout>
+    </HorizontalScrollView>
+</FrameLayout>
+
+    <!-- <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remarks"
+            android:padding="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_gravity="left"
+            android:textColor="#8A0808"
+            android:id="@+id/textView9" />-->

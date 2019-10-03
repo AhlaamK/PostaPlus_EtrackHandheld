@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+      >
+
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Event Entry"
+            android:visible="true"/>
+        <item
+            android:id="@+id/nav_rstverfctn"
+            android:icon="@drawable/ic_chrome_reader_mode_black_24dp"
+            android:title="Runsheet Verification"
+            android:visible="false"/>
+        <item
+            android:id="@+id/nav_pckpverfctn"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Pickup Verification"
+            android:visible="false"/>
+        <item
+            android:id="@+id/nav_utlwarehouse"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="UTL Warehouse"
+            android:visible="true"/>
+        <item
+            android:id="@+id/nav_scrtychck"
+            android:icon="@drawable/ic_check_circle_black_24dp"
+            android:title="OFD Security Check"
+            android:visible="true"/>
+
+        <item
+            android:id="@+id/nav_wcmax"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="WC Max"
+            android:visible="true"/>
+        <item
+            android:id="@+id/nav_bagconso"
+            android:icon="@drawable/ic_consobag_black_24dp"
+            android:title="Consolidate Bag"
+            android:visible="true"/>
+        <item
+            android:id="@+id/nav_manifest"
+            android:icon="@drawable/ic_manifest_black_24dp"
+            android:title="Manifest"
+            android:visible="true"/>
+    </group>
+
+    <item android:title="Extras">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share"
+                android:visible="false" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_arrow_back_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

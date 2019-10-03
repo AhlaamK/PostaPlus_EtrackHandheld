@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pickup_verification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.postaplus.etrack.PickupVerificationActivity">
+
+    <Spinner
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="5dp"
+        android:id="@+id/datespinner"
+        android:background="@drawable/spinnerbg"/>
+
+    <Button
+        android:text="Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="100dp"
+        android:id="@+id/btnupdate" />
+
+    <Button
+        android:text="Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnclear" />
+
+    <TextView
+        android:text="Station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/textView1"
+        />
+
+    <Spinner
+        android:layout_width="173dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/stationspinner"
+        android:background="@drawable/spinnerbg"/>
+
+    <TextView
+        android:text="Courier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/textView2"
+        />
+
+    <Spinner
+        android:layout_width="173dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginStart="220dp"
+        android:id="@+id/courierspinner"
+        android:background="@drawable/spinnerbg"/>
+
+    <TextView
+        android:text="Total:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:text="Matching:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="140dp"
+        android:textSize="15sp"
+        android:textColor="#FF4081"
+        android:id="@+id/textView6" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="111"
+        android:id="@+id/textcount1"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="65dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="111"
+        android:id="@+id/textcount2"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#FF4081"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="220dp"/>
+
+
+
+</FrameLayout>

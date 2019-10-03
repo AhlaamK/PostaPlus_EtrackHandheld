@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:background="#f0f0f5"
+    tools:context="com.postaplus.etrack.EventActivity"
+    android:keepScreenOn="true">
+
+
+    <Button
+        android:text="Save"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="245dp"
+        android:id="@+id/btnsave"
+        android:background="@drawable/btnbackground"
+       />
+    <Button
+        android:text="Clear"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:id="@+id/btnclear"
+      android:layout_marginLeft="330dp"
+        android:background="@drawable/btnbackground"/>
+
+
+    <AutoCompleteTextView
+        android:layout_width="230dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/eventspinner"
+        android:hint="Select Event"
+        android:background="@drawable/spinnerbg"
+        />
+
+    <TextView
+        android:text="NOTE"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/textView1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="85dp"
+        android:maxLength="250"
+        android:digits="ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .&#33;&#35;&#36;&#37;&#38;&#40;&#41;&#42;&#43;&#44;&#45;&#46;&#47;&#58;&#59;&#60;&#61;&#62;&#63;&#64;&#91;&#92;&#93;&#94;&#95;&#96;&#123;&#124;&#125;&#126;"
+        android:background="@drawable/edittext"
+        android:id="@+id/editNote" />
+    <TextView
+        android:text="RACK NO."
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="5dp"
+        android:digits="0123456789"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:text="WEIGHT"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="320dp"
+        android:id="@+id/textView3" />
+    <EditText
+        android:layout_width="83dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="318dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="5dp"
+        android:inputType="number|numberDecimal"
+        android:background="@drawable/edittext"
+        android:id="@+id/editWeight" />
+    <TextView
+        android:text="Total:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="18sp"
+        android:id="@+id/textView4"
+        />
+    <TextView
+        android:text="Valid:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="133dp"
+        android:textSize="18sp"
+
+        android:id="@+id/textView5" />
+    <TextView
+        android:text="Invalid:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="258dp"
+        android:textSize="18sp"
+        android:id="@+id/textView6" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="63dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount2"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="183dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="318dp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="348dp"
+        android:layout_marginTop="181dp"
+        android:visibility="invisible"
+     />
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView3"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="240dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|top">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Delete Invalid"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="0dp"
+                    android:layout_gravity="left|top"
+                    android:id="@+id/clrawbbtn" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AWB No."
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/textView7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/textView8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CheckRemark"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Events"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EventCode"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="45dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Note"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RackNo."
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="70dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView13" />
+            </TableRow>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView1"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resulttable1"/>
+
+            </ScrollView>
+        </TableLayout>
+
+    </HorizontalScrollView>
+
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/progressBarMain"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        style="?android:attr/progressBarStyle"
+        android:progressBackgroundTint="@color/colorPrimaryDark"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/editRackno"
+        android:layout_width="289dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="150dp"
+        android:digits="ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .&#33;&#35;&#36;&#37;&#38;&#40;&#41;&#42;&#43;&#44;&#45;&#46;&#47;&#58;&#59;&#60;&#61;&#62;&#63;&#64;&#91;&#92;&#93;&#94;&#95;&#96;&#123;&#124;&#125;&#126;"
+        android:background="@drawable/edittext"
+        android:maxLength="10" />
+
+    <!--  <SearchView.SearchAutoComplete
+          android:layout_width="39dp"
+          android:layout_height="23dp"
+          android:layout_marginLeft="5dp"
+          android:layout_marginTop="15dp"
+          android:id="@+id/searchview"
+          android:background="@drawable/ic_search_black_24dp" />-->
+</FrameLayout>

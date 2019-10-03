@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_event"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dp"
+    android:background="#f0f0f5"
+    tools:context="com.postaplus.etrack.UTLWarehouseActivity"
+    android:keepScreenOn="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/utlradiobtn">
+    <RadioButton
+        android:id="@+id/btnstckin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:text="UTL STOCK IN" />
+
+    <RadioButton
+        android:id="@+id/btnstckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:text="UTL STOCK OUT" />
+    <RadioButton
+        android:id="@+id/btnmove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="MOVE" />
+    </RadioGroup>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="35dp">
+
+        <TextView
+            android:text="Date"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:id="@+id/textViewdate" />
+        <TextView
+            android:layout_width="134dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/datespinner"
+            android:background="@drawable/spinnerbg"/>
+        <Button
+        android:text="Save"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/btnsave"
+        android:background="@drawable/btnbackground"
+        />
+        <Button
+        android:text="Clear"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:id="@+id/btnclear"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/btnbackground"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="75dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+    <TextView
+        android:text=""
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/txtvtoloctn" />
+
+    <EditText
+        android:layout_width="245dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:maxLength="15"
+        android:inputType="textCapCharacters"
+        android:background="@drawable/edittext"
+        android:id="@+id/edttoloc"
+        android:layout_weight="0.5"
+        />
+        <!--android:inputType="textCapCharacters"-->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="125dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:text=""
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/txtvfrmloctn" />
+
+        <EditText
+            android:layout_width="245dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:maxLength="15"
+            android:inputType="textCapCharacters"
+            android:background="@drawable/edittext"
+            android:id="@+id/edtfrmloc"
+            android:layout_weight="0.5"
+             />
+    </LinearLayout>
+
+    <TextView
+        android:text="Total:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="15sp"
+        android:id="@+id/textView4"
+        />
+    <TextView
+        android:text="Valid:"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="115dp"
+        android:textSize="15sp"
+
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount1"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="53dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount2"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="155dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount3"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#eb7a02"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="268dp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="298dp"
+        android:layout_marginTop="150dp"
+        android:visibility="invisible"
+        />
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView3"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="200dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|top">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Delete Invalid"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="0dp"
+                    android:layout_gravity="left|top"
+                    android:id="@+id/clrawbbtn" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AWB No."
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/textView7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remarks"
+                    android:padding="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stock Status"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/textView8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/textView10"
+                    android:visibility="gone"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To Location"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/textView11"
+                    android:visibility="gone"/>
+
+
+
+
+            </TableRow>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView1"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resulttable1"/>
+
+            </ScrollView>
+        </TableLayout>
+
+    </HorizontalScrollView>
+
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/progressBarMain"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="300dp"
+        style="?android:attr/progressBarStyle"
+        android:progressBackgroundTint="@color/colorPrimaryDark"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="218dp"
+        android:layout_marginTop="170dp"
+        android:text="Invalid:"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <!--  <SearchView.SearchAutoComplete
+          android:layout_width="39dp"
+          android:layout_height="23dp"
+          android:layout_marginLeft="5dp"
+          android:layout_marginTop="15dp"
+          android:id="@+id/searchview"
+          android:background="@drawable/ic_search_black_24dp" />-->
+</FrameLayout>

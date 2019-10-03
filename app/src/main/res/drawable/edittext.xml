@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--   Bottom right side 2dp Shadow  -->
+    <item>
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="270"
+                android:centerColor="#b3b1b1"
+                android:endColor="#b3b1b1"
+                android:startColor="#b3b1b1" />
+
+            <stroke
+                android:width="2dip"
+                android:color="#b3b1b1" />
+
+            <corners
+                android:bottomLeftRadius="3dp"
+                android:bottomRightRadius="3dp"
+                android:radius="1dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="3dp" />
+        </shape>
+    </item>
+<!--   Bottom 2dp Shadow  -->
+    <item>
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="270"
+                android:centerColor="#b3b1b1"
+                android:endColor="#b3b1b1"
+                android:startColor="#b3b1b1" />
+
+            <stroke
+                android:width="2dip"
+                android:color="#b3b1b1" />
+
+            <corners
+                android:bottomLeftRadius="3dp"
+                android:bottomRightRadius="3dp"
+                android:radius="1dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="3dp" />
+        </shape>
+    </item>
+<!--   White Top color  -->
+    <item
+        android:left="3px"
+        android:top="3px">
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="-90"
+                android:centerColor="#ebebeb"
+                android:endColor="#ebebeb"
+                android:startColor="#ebebeb" />
+
+            <corners
+                android:bottomLeftRadius="3dp"
+                android:bottomRightRadius="3dp"
+                android:radius="1dp"
+                android:topLeftRadius="3dp"
+                android:topRightRadius="3dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.postaplus.etrack.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+        <TextView
+            android:layout_width="wrap_content"
+           android:text=""
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="12dp"
+            android:textSize="18sp"
+            android:id="@+id/usrntxtv"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+
+            />
+        </android.support.v7.widget.Toolbar>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+  <!--  <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:id="@+id/usrntxtv"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginRight="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="52dp"/>-->
+    <ImageView
+    android:id="@+id/imageViewpp"
+    android:layout_width="355dp"
+    android:layout_height="417dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginLeft="25dp"
+    android:adjustViewBounds="true"
+    android:background="@drawable/postlogoapp" />
+
+
+    <ImageView
+        android:id="@+id/imageViewpp1"
+        android:layout_width="355dp"
+        android:layout_height="417dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="25dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/postlogoapp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/versntxt"
+        android:textColor="#eb7a02"
+        android:layout_marginRight="17dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:id="@+id/logotext"
+        android:text="Delivered your way..."
+        android:layout_marginRight="20dp"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:layout_marginBottom="80dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:id="@+id/logotext1"
+        android:text="Delivered your way..."
+        android:layout_marginRight="20dp"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:layout_marginBottom="80dp"/>
+</android.support.design.widget.CoordinatorLayout>

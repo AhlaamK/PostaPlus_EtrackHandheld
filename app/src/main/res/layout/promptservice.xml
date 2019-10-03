@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:android1="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android1:paddingLeft="24dp"
+        android1:paddingRight="24dp"
+        android1:paddingTop="20dp"
+        android1:paddingBottom="8dp"
+        >
+
+        <TextView
+            android:id="@+id/textview12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:text="Enter Server name / IP"
+            android:textColor="#353535"
+            android:textSize="18sp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:ems="10"
+            android:background="@drawable/edittext"
+            android:id="@+id/editip" />
+
+
+        <TextView
+            android:id="@+id/textViewOk"
+            android:layout_width="64dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editip"
+            android:padding="8dp"
+            android1:layout_marginTop="8dp"
+            android:text="OK"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ee8122"
+            />
+
+        <TextView
+            android:id="@+id/textViewCancel"
+            android:layout_width="70dp"
+            android:layout_height="36dp"
+            android:layout_alignBaseline="@+id/textViewOk"
+            android:layout_below="@+id/editip"
+            android:layout_alignBottom="@+id/textViewOk"
+            android:layout_marginRight="15dp"
+            android:padding="8dp"
+            android:text="CANCEL"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ee8122"
+            android:layout_toStartOf="@+id/textViewOk" />
+        <TextView
+            android:id="@+id/textviewip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewOk"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="#353535"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/textViewConfirm"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/textviewip"
+            android:layout_marginTop="32dp"
+            android:padding="8dp"
+            android:text="CONFIRM"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ee8122"
+            android:layout_toStartOf="@+id/textViewOk" />
+
+    </RelativeLayout>
+
+</FrameLayout>

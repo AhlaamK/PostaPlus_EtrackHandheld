@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rst_verification"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.postaplus.etrack.RstVerificationActivity">
+
+
+
+    <TextView
+        android:layout_width="134dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/datespinner"
+        android:background="@drawable/spinnerbg"/>
+    <TextView
+        android:text="Courier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/textView2"
+        />
+
+    <TextView
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="0dp"
+        android:id="@+id/courierspinner"
+        android:hint="Select Courier"
+        android:gravity="center"
+        android:background="@drawable/spinnerbg"/>
+
+    <TextView
+        android:text="Runsheet No."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/textView3"
+        />
+
+    <TextView
+        android:layout_width="178dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="200dp"
+        android:gravity="center"
+        android:hint="Select RST"
+        android:id="@+id/rstspinner"
+        android:background="@drawable/spinnerbg"/>
+    <TextView
+        android:text="Odometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/textView4"
+        />
+    <EditText
+        android:layout_width="178dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="170dp"
+        android:ems="10"
+        android:background="@drawable/edittext"
+        android:id="@+id/editOdo" />
+
+    <CheckBox
+        android:text="Verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="135dp"
+        android:id="@+id/checkBoxverify" />
+    <Button
+        android:text="Update"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="75dp"
+        android:id="@+id/btnupdate" />
+
+
+    <Button
+        android:text="Clear"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:id="@+id/btnclear" />
+
+    <TextView
+        android:text="Total:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="200dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:text="Matching:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="170dp"
+        android:layout_marginStart="280dp"
+        android:textSize="15sp"
+        android:textColor="#FF4081"
+        android:id="@+id/textView6" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount1"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="240dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textcount2"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#FF4081"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="350dp"/>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView3"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="240dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|top">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AWB No."
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_marginLeft="40dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/textView7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consignee Name"
+                    android:padding="5dp"
+                    android:textColor="#8A0808"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/textView8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="left"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Event"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Type"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="45dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POD Name"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="70dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView13" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POD DateTime"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="#8A0808"
+                    android:id="@+id/textView14" />
+            </TableRow>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/scrollView1"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/resulttable1"/>
+
+            </ScrollView>
+        </TableLayout>
+
+    </HorizontalScrollView>
+
+
+</FrameLayout>
