@@ -36,7 +36,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +52,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.WebService;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -500,7 +500,7 @@ public class SecurityCheckActivity extends AppCompatActivity implements KDCConne
                 return;
             }
 
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println("kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -588,17 +588,6 @@ public class SecurityCheckActivity extends AppCompatActivity implements KDCConne
 
     }
 
-    public static boolean Check_ValidWaybill(String s) {
-
-        if (s.length() == 10 ||s.length() == 12 ) {
-            return StringUtils.isNumeric(s) == true;
-        }
-        else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
-    }
-
     @Override
     public void onBarcodeEvent(final BarcodeReadEvent honeywellevent) {
         System.out.println("honeywellevent honeywel is:" + honeywellevent);
@@ -632,7 +621,7 @@ public class SecurityCheckActivity extends AppCompatActivity implements KDCConne
                         return;
                     }
 
-                    if (Check_ValidWaybill(honeywellevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidWaybill(honeywellevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywellevent ID : ");
                         // System.out.println(R.id.WC_Frame);
@@ -925,13 +914,13 @@ public class SecurityCheckActivity extends AppCompatActivity implements KDCConne
                         });
                         return;
                     } }else
-              /*  if (Check_ValidWaybill(camerabill) == false) {
+              /*  if (Utils.checkValidWaybill(camerabill) == false) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Invalid Waybill", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     return;
                 }*/
-                    if (Check_ValidWaybill(camerabill) == true) {
+                    if (Utils.checkValidWaybill(camerabill) == true) {
                         connote = camerabill;
                         new checkSCwaybill(camerabill).execute();
                     }else{

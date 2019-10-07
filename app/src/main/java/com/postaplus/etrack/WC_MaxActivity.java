@@ -35,7 +35,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,6 +47,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.WebService;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -445,7 +445,7 @@ public class WC_MaxActivity extends AppCompatActivity implements KDCConnectionLi
 
             }
 
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidAlphaWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println(" kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -529,17 +529,6 @@ public class WC_MaxActivity extends AppCompatActivity implements KDCConnectionLi
 
     }
 
-    public static boolean Check_ValidWaybill(String s) {
-
-        if (s.length() == 10 || s.length() == 12 || s.length() == 13) {
-            // return StringUtils.isNumeric(s) == true;
-            return StringUtils.isAlphanumeric(s) == true;
-        } else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
-    }
-
     @Override
     public void onBarcodeEvent(final BarcodeReadEvent honeywellevent) {
         System.out.println("honeywellevent honeywel is:" + honeywellevent);
@@ -582,7 +571,7 @@ public class WC_MaxActivity extends AppCompatActivity implements KDCConnectionLi
 
                     }
 
-                    if (Check_ValidWaybill(honeywellevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidAlphaWaybill(honeywellevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywellevent ID : ");
                         // System.out.println(R.id.WC_Frame);
@@ -1086,7 +1075,7 @@ public class WC_MaxActivity extends AppCompatActivity implements KDCConnectionLi
                 camerabill = contents;
 
 
-                if (Check_ValidWaybill(camerabill) == true) {
+                if (Utils.checkValidAlphaWaybill(camerabill) == true) {
                     connote = camerabill;
                     new checkWCMaxwaybill(camerabill).execute();
                 } else {

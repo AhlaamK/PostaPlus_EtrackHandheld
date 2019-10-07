@@ -38,7 +38,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +52,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.WebService;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -587,7 +587,7 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
                     // ScannerData = honeywellevent;
                     waybill = honeywellevent.getBarcodeData();
 
-                    //  if (Check_ValidWaybill(kdcbarcodedata.GetData()) == false) {
+                    //  if (Utils.checkValidWaybill(kdcbarcodedata.GetData()) == false) {
                     if (BtnStckIn.isChecked() && EdtToLoc.getText().toString().contentEquals("")) {
                         _activity.runOnUiThread(new Runnable() {
                             public void run() {
@@ -628,7 +628,7 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
 
 
                     // }else
-                    if (Check_ValidWaybill(honeywellevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidWaybill(honeywellevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywellevent ID : ");
                         // System.out.println(R.id.WC_Frame);
@@ -971,7 +971,7 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
             ScannerData = kdcbarcodedata;
             waybill = ScannerData.GetData();
 
-            //  if (Check_ValidWaybill(kdcbarcodedata.GetData()) == false) {
+            //  if (Utils.checkValidWaybill(kdcbarcodedata.GetData()) == false) {
             if (BtnStckIn.isChecked() && EdtToLoc.getText().toString().contentEquals("")) {
                 _activity.runOnUiThread(new Runnable() {
                     public void run() {
@@ -1012,7 +1012,7 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
 
 
             // }else
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println(" kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -1099,15 +1099,6 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
 
     }
 
-    public static boolean Check_ValidWaybill(String s) {
-
-        if (s.length() == 10 || s.length() == 12) {
-            return StringUtils.isNumeric(s) == true;
-        } else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -1155,13 +1146,13 @@ public class UTLWarehouseActivity extends AppCompatActivity implements KDCConnec
                     }
 
                 }
-              /*  if (Check_ValidWaybill(camerabill) == false) {
+              /*  if (Utils.checkValidWaybill(camerabill) == false) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Invalid Waybill", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     return;
                 }*/
-                if (Check_ValidWaybill(camerabill) == true) {
+                if (Utils.checkValidWaybill(camerabill) == true) {
                     connote = camerabill;
                     new checkUTLwaybill(camerabill).execute();
                 }

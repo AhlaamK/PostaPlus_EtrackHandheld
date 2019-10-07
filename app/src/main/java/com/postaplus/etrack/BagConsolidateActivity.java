@@ -38,7 +38,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,6 +53,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.WebService;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -653,7 +653,7 @@ public class BagConsolidateActivity extends AppCompatActivity implements KDCConn
             }
 
 
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidAlphaWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println(" kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -735,17 +735,6 @@ public class BagConsolidateActivity extends AppCompatActivity implements KDCConn
     @Override
     public void DataReceived(KDCData kdcData) {
 
-    }
-
-    public static boolean Check_ValidWaybill(String s) {
-
-        if (s.length() == 10 || s.length() == 12 || s.length() == 13) {
-            // return StringUtils.isNumeric(s) == true;
-            return StringUtils.isAlphanumeric(s) == true;
-        } else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
     }
 
     @Override
@@ -837,7 +826,7 @@ public class BagConsolidateActivity extends AppCompatActivity implements KDCConn
                     return;
                 }
 
-                if (Check_ValidWaybill(camerabill) == true) {
+                if (Utils.checkValidAlphaWaybill(camerabill) == true) {
                     connote = camerabill;
                     new BagConsolTask(camerabill).execute();
                 } else {
@@ -993,7 +982,7 @@ public class BagConsolidateActivity extends AppCompatActivity implements KDCConn
                     }
 
 
-                    if (Check_ValidWaybill(honeywellevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidAlphaWaybill(honeywellevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywellevent ID : ");
                         // System.out.println(R.id.WC_Frame);

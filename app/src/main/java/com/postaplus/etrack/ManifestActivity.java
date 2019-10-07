@@ -36,7 +36,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +50,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.WebService;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -319,7 +319,7 @@ public class ManifestActivity extends AppCompatActivity implements KDCConnection
                 });
                 return;
             }
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidAlphaWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println(" kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -365,16 +365,7 @@ public class ManifestActivity extends AppCompatActivity implements KDCConnection
         }
     }
 
-    public static boolean Check_ValidWaybill(String s) {
 
-        if (s.length() == 10 || s.length() == 12 || s.length() == 13) {
-            // return StringUtils.isNumeric(s) == true;
-            return StringUtils.isAlphanumeric(s) == true;
-        } else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
-    }
     @Override
     public void ConnectionChanged(BluetoothDevice device, int state) {
         //ToDo Auto-generated method stub
@@ -506,7 +497,7 @@ public class ManifestActivity extends AppCompatActivity implements KDCConnection
                     waybill = honeywllevent.getBarcodeData();
 
 
-                    if (Check_ValidWaybill(honeywllevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidAlphaWaybill(honeywllevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywllevent ID : ");
                         // System.out.println(R.id.WC_Frame);
@@ -636,7 +627,7 @@ public class ManifestActivity extends AppCompatActivity implements KDCConnection
                     return;
                 }
 
-                if (Check_ValidWaybill(camerabill) == true) {
+                if (Utils.checkValidAlphaWaybill(camerabill) == true) {
                     connote = camerabill;
                     new CheckManifstTask(camerabill).execute();
                 } else {

@@ -27,8 +27,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -41,6 +39,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.FuncClasses.Couriers;
 import webservice.FuncClasses.GetRunsheetVerifyDet;
 import webservice.JsonFuncClasses.JsonFuncClasses.D;
@@ -472,7 +471,7 @@ public class RstVerificationActivity extends AppCompatActivity implements KDCCon
             waybill = ScannerData.GetData();
 
 
-            if (Check_ValidWaybill(barcodedata.GetData()) == true) {
+            if (Utils.checkValidWaybill(barcodedata.GetData()) == true) {
 
 
                 System.out.println(" value for barcodedata is : ");
@@ -618,18 +617,7 @@ public class RstVerificationActivity extends AppCompatActivity implements KDCCon
         return false;
     }
 
-    public static boolean Check_ValidWaybill (String s){
 
-        if (s.length() == 10 || s.length() == 12)
-        {
-            return StringUtils.isNumeric(s) == true;
-        }
-        else if (s.length() == 18)
-        {
-            return StringUtils.isAlphanumeric(s) == true;
-        }
-        return false;
-    }
 
     public void getcouriers() {
         try {

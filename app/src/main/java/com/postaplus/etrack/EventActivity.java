@@ -42,8 +42,6 @@ import com.honeywell.aidc.ScannerNotClaimedException;
 import com.honeywell.aidc.ScannerUnavailableException;
 import com.honeywell.aidc.TriggerStateChangeEvent;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
 
 import koamtac.kdc.sdk.KDCBarcodeDataReceivedListener;
@@ -53,6 +51,7 @@ import koamtac.kdc.sdk.KDCData;
 import koamtac.kdc.sdk.KDCDataReceivedListener;
 import koamtac.kdc.sdk.KDCReader;
 import util.ActivityNotification;
+import utils.Utils;
 import webservice.FuncClasses.Events;
 import webservice.WebService;
 
@@ -594,7 +593,7 @@ public class EventActivity extends AppCompatActivity implements KDCConnectionLis
             waybill = ScannerData.GetData();
 
 
-            if (Check_ValidWaybill(kdcbarcodedata.GetData()) == true) {
+            if (Utils.checkValidWaybill(kdcbarcodedata.GetData()) == true) {
 
                 System.out.println(" kdcbarcodedata ID : ");
                 // System.out.println(R.id.WC_Frame);
@@ -696,7 +695,7 @@ public class EventActivity extends AppCompatActivity implements KDCConnectionLis
                     waybill = honeywellevent.getBarcodeData();
 
 
-                    if (Check_ValidWaybill(honeywellevent.getBarcodeData()) == true) {
+                    if (Utils.checkValidWaybill(honeywellevent.getBarcodeData()) == true) {
 
                         System.out.println("honeywellevent ID : ");
                         // System.out.println(R.id.WC_Frame);
@@ -824,17 +823,6 @@ public class EventActivity extends AppCompatActivity implements KDCConnectionLis
                 return true;
             }
 
-        }
-        return false;
-    }
-
-
-    public static boolean Check_ValidWaybill(String s) {
-
-        if (s.length() == 10 || s.length() == 12) {
-            return StringUtils.isNumeric(s) == true;
-        } else if (s.length() == 18) {
-            return StringUtils.isAlphanumeric(s) == true;
         }
         return false;
     }
@@ -1249,7 +1237,7 @@ public class EventActivity extends AppCompatActivity implements KDCConnectionLis
                 String contents = intent.getStringExtra("SCAN_RESULT");
 
                 camerabill = contents;
-                if (Check_ValidWaybill(camerabill) == false) {
+                if (Utils.checkValidWaybill(camerabill) == false) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Invalid Waybill", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
